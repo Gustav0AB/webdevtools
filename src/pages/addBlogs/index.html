@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <title>Blogs Page</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/src/pages/addInternalPages/index.html">Internal Pages</a></li>
+                <li><a href="/src/pages/addBlogs/index.html">Add Blogs</a></li>
+                <li><a href="/src/pages/createForm/index.html">Add Forms</a></li>
+                <li><a href="/index.html">Get Images</a></li>
+                <li><a href="/index.html">Doc</a></li>
+            </ul>
+            
+            <h1>Add Blogs to Wordpress</h1>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="blogs-page">
+            <p>The follow tool will help you to upload Blogs please Insert the follow information.</p>
+            <div class="setup">
+                <h3>Setup information</h3>
+                <label>
+                    username
+                    <input type="text" id="js-username">
+                </label>
+                <label>
+                    password token
+                    <input type="password" id="js-password">
+                </label>
+                
+                <label>
+                    website url
+                    <input type="text" id="js-website-url">
+                </label>
+                <button id="setup-info" >Setup</button>
+            </div>
+            <div class="blogs">
+                <div class="blogs-options"><button id="add-blog">Add New Blog</button><button id="upload-blogs">Upload Blogs</button>
+                </div>
+
+                <div id="content-blogs">
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module"  src="./src/index.js"></script>
+</body>
+</html>

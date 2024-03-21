@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/styles.css">
+    <title>Internal Pages</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/src/pages/addInternalPages/index.html">Internal Pages</a></li>
+                <li><a href="/src/pages/addBlogs/index.html">Add Blogs</a></li>
+                <li><a href="/src/pages/createForm/index.html">Add Forms</a></li>
+                <li><a href="/index.html">Get Images</a></li>
+                <li><a href="/index.html">Doc</a></li>
+            </ul>
+            
+            <h1>Internal Pages</h1>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="internal-pages">
+            <label>Add your internal pages 
+                <input  id="input-pages" type="text"></label>
+            <button id="add-to-list-btn" class="fullWidth">Add</button>
+            <div id="list-container">
+            </div>
+
+            
+            <p>by default it going to take all the body contet if you want some specific content please add the class, id or tag.</p>
+            <p>Example: .main, #main or main</p>
+            <input id="content-filter" type="text" >
+            <div id="js-request-content"></div>
+            <p id="images-done"></p>
+            <button id="request-content-btn">Get Content</button>
+            <button id="download" style="display: none;">Download Content</button>
+            <button id="download-images" >Download All Images</button>
+        </div>
+    </main>
+    
+    <script src="./src/index.js"> </script>
+</body>
+</html>
