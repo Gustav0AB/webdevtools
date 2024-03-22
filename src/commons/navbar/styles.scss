@@ -1,0 +1,157 @@
+
+.navbar{
+    display: flex;
+    align-items: center;    
+    padding: 0 30px;
+    margin-left: auto;
+    .mobile-menu{
+        @media(min-width: 720px){
+            display: none;
+        }
+        cursor: pointer;
+        position: fixed;
+        background: transparent;
+        width: 30px;
+        height: 30px;
+        margin-left: 0;
+        padding: 0;
+        border: 0;
+        z-index: 3;
+        span{
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: #000;
+        }
+        >div{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px
+        }
+    }
+    .logo{
+        position: relative;
+        background-color: #291c75;
+        &:before{
+            //content: '';
+            position: absolute;
+            background-color: #00bcd4;
+            width: 85px;
+            height: 25px;
+            left: 10px;
+            top: 35px;
+            z-index: 0;
+        }
+        &:after{
+            //content: '';
+            position: absolute;
+            background-color: #00bcd4;
+            width: 50px;
+            height: 2px;
+            left: 10px;
+            top: 24px;
+            z-index: 0;
+            box-shadow: 5px -2px 0px 1px #000;
+        }
+        span{
+            position: relative;
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 20px 10px;
+            text-shadow: 0px 0px 1px #000;
+            color: #6051bf;
+            //text-shadow: 6px 12px 2px #fff, -7px -7px 2px #fff;
+        }
+    }
+    ul.navbar-list{
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #4730d3;
+        z-index: 2;
+        height: 100%;
+        padding: 0; 
+        margin-left: 40px;
+        @media(min-width: 768px){
+            justify-content: space-around;
+            flex-direction: row;
+            height: auto;
+            position: relative;
+        }
+        li {
+            position: relative;
+            a{
+                transition: all .3s;
+                position: relative;
+                padding: 10px 5px;
+                flex: 1;
+                text-align: center;
+                font-size: 18px;
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                z-index: 1;
+                &:before{
+                    transition: all .3s;
+                    content: "";
+                    position: absolute;
+                    height: 10px;
+                    width: 0%;
+                    background-color: #ccf381;
+                    bottom: 10px;
+                    right: 0px;
+                    z-index: -1;
+                }
+                &:hover{
+                    &:before{
+                        width: 50%;
+                    }
+                }
+            }
+            &:hover{
+                .dropdown{        
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+            .dropdown{
+                transition: all .3s;
+                display: flex;
+                flex-direction: column;
+                background: #3184d4;
+                list-style: none;
+                padding: 0;
+                height: 0;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                z-index: 2;
+                overflow: hidden;
+                opacity: 0;
+                li{
+                    a{
+                        width: 130px;
+                        font-size: 13px;
+                        &:before{
+                            content: none;
+                        }
+                        &:hover{
+                            background-color: #ccf381;
+                            color:#291c75;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn{
+        margin-right: 0;
+    }
+}
