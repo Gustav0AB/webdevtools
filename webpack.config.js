@@ -1,19 +1,29 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+require('dotenv').config({path: __dirname + '/.env'})
+
 
 module.exports = {
- mode: 'development',
-  entry: {
-    index: './index.js',
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-     title: 'Development',
-    }),
-  ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
-};
+    entry: './src/main.js',
+    output: {
+        path: __dirname + '/dist',
+        filename: 'bundle.js'
+    },
+    module: {
+        rules:[
+            {
+                test: /\.s[ac]ss$/i,
+                use: [ 'style-loader', 'css-loader', 'sass-loader']
+            },
+			{
+			  test: /\.html$/i,
+			  loader: 'html-loader'
+			}
+        ]    
+    },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: './src/index.html'
+        })
+    ],
+    mode: 'development'
+}
